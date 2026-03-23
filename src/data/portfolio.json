@@ -1,0 +1,93 @@
+{
+  "person": {
+    "name": "Tirtharaj Dutta Roy",
+    "role": "Computer Science Engineer | ML & Software Developer",
+    "contact": {
+      "email": "tirtharajdroy@gmail.com",
+      "linkedin": "https://linkedin.com/in/tirtharaj-d-roy",
+      "github": "https://github.com/BaNkai-007"
+    },
+    "resume": "/resume.pdf",
+    "education": {
+      "degree": "B.Tech CSE",
+      "institution": "Lovely Professional University",
+      "period": "2023-Present"
+    }
+  },
+
+  "projects": [
+    {
+      "id": "dropout_predictor",
+      "title": "Student-Dropout Predictor",
+      "link": "https://github.com/BaNkai-007/student-dropout-predictor",
+      "category": "Machine Learning",
+      "variant": "ml",
+      "stack": ["Python", "Streamlit", "Scikit-Learn", "Pandas", "SMOTE"],
+      "impact": "Handled 12% class imbalance; boosted minority class Recall from 0.78 to 0.95. Achieved <500ms inference.",
+      "uiConcept": "Render as a precise, data-driven node graph."
+    },
+    {
+      "id": "pdf_converter",
+      "title": "Image to PDF Converter",
+      "link": "https://github.com/BaNkai-007/Image_To_PDF",
+      "category": "Mobile Engineering",
+      "variant": "utility",
+      "stack": ["Flutter", "Dart", "Android Studio"],
+      "impact": "100% local batch processing of 50+ high-res images with zero API dependency.",
+      "uiConcept": "Render with a clean, utilitarian, mobile-first grid aesthetic."
+    },
+    {
+      "id": "poem_generator",
+      "title": "Emotion-Based Poem Generator",
+      "link": "https://github.com/BaNkai-007/Emotion-Based_Poem_Generator",
+      "category": "Generative AI",
+      "variant": "generative",
+      "stack": ["HTML5", "CSS3", "JavaScript", "OpenAI API"],
+      "impact": "Context-aware prompt system for 3+ languages; maintained 60 FPS UI during 3-4s API latency.",
+      "uiConcept": "Render with fluid, shifting color gradients mapping to sentiment."
+    }
+  ],
+
+  "skills": {
+    "languages": ["C++", "Python", "Java", "JavaScript"],
+    "frameworks": ["Flask", "Flutter", "Scikit-learn", "XGBoost", "MySQL"],
+    "tools": ["Git", "GitHub", "VSCode", "JupyterLabs"],
+    "core": ["Data Processing", "Model Building", "ML Algorithms"],
+    "practices": ["Technical Translation", "Systems Thinking", "Cross-Functional Collab", "Agile Adaptability"]
+  },
+
+  "achievements": [
+    {
+      "title": "Binary Blitz Hackathon",
+      "distinction": "Finalist",
+      "image": "/certs/binary_blitz.jpg"
+    },
+    {
+      "title": "SIH 2024 University Preliminary Hackathon",
+      "distinction": "Qualifier"
+    },
+    {
+      "title": "University-Wide Group Discussion Event — Centre of Professional Enhancement, LPU",
+      "distinction": "2nd Runner Up",
+      "image": "/certs/lpu_gd.png"
+    }
+  ],
+
+  "training": [
+    { "title": "AI-Powered NLP Course", "provider": "AlgoTutors", "period": "Jun '25 – Aug '25", "image": "/certs/nlp_algotutors.png" },
+    { "title": "Artificial Intelligence Course", "provider": "Teachnook", "period": "Nov '23 – Dec '23", "image": "/certs/ai_teachnook.jpg" }
+  ],
+
+  "certifications": [
+    { "title": "ChatGPT Made Easy: AI Essentials for Beginners", "provider": "Udemy", "date": "Aug '25", "image": "/certs/chatgpt_ai_essentials.jpg", "verifyUrl": "https://ude.my/UC-4aa5d665-fb18-4a0e-90b3-9d9059dfec7c" },
+    { "title": "Data Structures and Algorithms", "provider": "iamneo", "date": "Dec '24", "image": "/certs/dsa_iamneo.jpg" },
+    { "title": "Fundamentals of Network Communication", "provider": "Coursera", "date": "Sep '24", "image": "/certs/network_communication.jpg", "verifyUrl": "https://coursera.org/verify/Q3WCT55ZGBJ2" },
+    { "title": "The Complete Python Bootcamp: Zero to Hero", "provider": "Udemy", "date": "Dec '23", "image": "/certs/python_bootcamp.jpg", "verifyUrl": "https://ude.my/UC-c3dad52d-2dea-4f69-a5e6-026e962677d2" }
+  ],
+
+  "education": [
+    { "institution": "Lovely Professional University", "location": "Punjab, India", "degree": "B.Tech — Computer Science & Engineering", "period": "Aug 2023 – Present" },
+    { "institution": "DPS, Digboi", "location": "Assam, India", "degree": "Intermediate", "period": "Apr 2021 – Mar 2022" },
+    { "institution": "Shiksha – The Gurukul", "location": "Assam, India", "degree": "Matriculation", "period": "Apr 2019 – Mar 2020" }
+  ]
+}

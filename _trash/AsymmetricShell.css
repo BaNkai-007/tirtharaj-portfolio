@@ -1,0 +1,10 @@
+/* ============================================================
+   AsymmetricShell.css — Grid-area assignments
+   ============================================================ */
+
+/* ── Grid Area Slots ── */
+.shell__hero     { grid-area: hero; }
+.shell__projects { grid-area: projects; }
+.shell__skills   { grid-area: skills; }
+.shell__about    { grid-area: about; }
+.shell__contact  { grid-area: contact; }

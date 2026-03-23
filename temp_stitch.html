@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tirtharaj Dutta Roy | Digital Architect</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#bac9cc",
+              "secondary-fixed-dim": "#bcc7de",
+              "surface-container-high": "#222a3d",
+              "primary-fixed-dim": "#00daf3",
+              "outline": "#849396",
+              "on-secondary-fixed-variant": "#3c475a",
+              "secondary-container": "#3e495d",
+              "surface": "#0b1326",
+              "secondary-fixed": "#d8e3fb",
+              "on-primary": "#00363d",
+              "tertiary-fixed-dim": "#c4c7c9",
+              "surface-container": "#171f33",
+              "surface-container-lowest": "#060e20",
+              "on-surface": "#dae2fd",
+              "on-tertiary-fixed": "#191c1e",
+              "tertiary-fixed": "#e0e3e5",
+              "on-secondary-fixed": "#111c2d",
+              "surface-container-highest": "#2d3449",
+              "on-background": "#dae2fd",
+              "inverse-primary": "#006875",
+              "secondary": "#bcc7de",
+              "on-primary-fixed": "#001f24",
+              "inverse-surface": "#dae2fd",
+              "surface-container-low": "#131b2e",
+              "on-tertiary-container": "#565a5b",
+              "error-container": "#93000a",
+              "primary": "#c3f5ff",
+              "on-tertiary-fixed-variant": "#444749",
+              "on-error-container": "#ffdad6",
+              "primary-container": "#00e5ff",
+              "primary-fixed": "#9cf0ff",
+              "background": "#0b1326",
+              "outline-variant": "#3b494c",
+              "on-tertiary": "#2d3133",
+              "tertiary-container": "#ced1d3",
+              "on-secondary": "#263143",
+              "on-primary-container": "#00626e",
+              "error": "#ffb4ab",
+              "on-primary-fixed-variant": "#004f58",
+              "inverse-on-surface": "#283044",
+              "on-error": "#690005",
+              "surface-variant": "#2d3449",
+              "surface-dim": "#0b1326",
+              "tertiary": "#ebedef",
+              "on-secondary-container": "#aeb9d0",
+              "surface-bright": "#31394d",
+              "surface-tint": "#00daf3"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Space Grotesk"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(45, 52, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0b1326; }
+        ::-webkit-scrollbar-thumb { background: #00e5ff; }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl h-16 z-50 flex justify-between items-center px-8 bg-[#2d3449]/60 backdrop-blur-md shadow-[0_40px_40px_rgba(218,226,253,0.08)]">
+<div class="font-['Newsreader'] font-bold text-[#00e5ff] tracking-tighter text-2xl">Tirtharaj Dutta Roy</div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="text-[#c3f5ff] border-b-2 border-[#00e5ff] pb-1 font-body text-sm uppercase tracking-widest" href="#work">Work</a>
+<a class="text-[#849396] hover:text-[#00e5ff] transition-colors font-body text-sm uppercase tracking-widest" href="#about">About</a>
+<a class="text-[#849396] hover:text-[#00e5ff] transition-colors font-body text-sm uppercase tracking-widest" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#00e5ff] hover:bg-[#00daf3]/10 p-2 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar Shared Component (Hidden on small screens, shown for desktop project navigation) -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-full w-72 flex-col pt-24 pb-8 bg-[#0b1326] z-40 border-r border-[#3b494c]/15">
+<div class="px-8 mb-12">
+<div class="font-['Newsreader'] text-xl text-[#00e5ff]">Project Archive</div>
+<div class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-outline mt-1">Technical Case Studies</div>
+</div>
+<nav class="flex flex-col flex-1">
+<a class="group flex items-center gap-4 border-l-4 border-[#00e5ff] bg-[#171f33] text-[#00e5ff] pl-4 py-4 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">Fintech Reimagined</span>
+</a>
+<a class="group flex items-center gap-4 text-[#849396] pl-4 py-4 hover:bg-[#131b2e] hover:text-[#c3f5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">AI Dashboard</span>
+</a>
+<a class="group flex items-center gap-4 text-[#849396] pl-4 py-4 hover:bg-[#131b2e] hover:text-[#c3f5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">CleanTech OS</span>
+</a>
+<a class="group flex items-center gap-4 text-[#849396] pl-4 py-4 hover:bg-[#131b2e] hover:text-[#c3f5ff] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-xs">System Design</span>
+</a>
+</nav>
+<div class="px-8">
+<button class="w-full bg-primary-container text-on-primary py-4 font-body font-bold text-xs uppercase tracking-widest hover:bg-surface-tint transition-all">
+                View All Projects
+            </button>
+</div>
+</aside>
+<main class="xl:ml-72">
+<!-- Section 1: Hero -->
+<section class="relative min-h-screen flex flex-col justify-center px-8 md:px-24 overflow-hidden bg-surface" id="hero">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-container via-surface to-surface"></div>
+<img alt="Abstract 3D Shape" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay" data-alt="Abstract 3D geometric glass structure representing logic and complexity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALNquarX2lULPT4O898ywds6vXX4RKetNjIv66zGcs2C-001U6Yv9FwsjHLu3Fvnz2lDWmNta3B8ofWII4asQ4S2zENSJO2pb1v9emM5-RUGTyCYgMlDedFjnEAchX1YmH3bQ5JCkFH5U0Q_Chjh0xjvZBikab6WmPr27E-4B90cb9bITpw4Ziu0kplC58EtanDHt9dmNbDvS3obLz8TX1GHulvZfodsPjx3p7AFUyik5rfbkUvwaI0bymyy_W3eFSkg1Ahg-O8bw"/>
+</div>
+<div class="relative z-10 max-w-4xl">
+<h2 class="font-body text-primary-container uppercase tracking-[0.4em] text-sm mb-6">The Digital Architect</h2>
+<h1 class="font-headline text-7xl md:text-9xl italic leading-none mb-8 tracking-tighter text-on-surface">
+                    Logic <span class="text-outline">&amp;</span> <br/>
+<span class="text-primary-container">Lore.</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-outline max-w-xl leading-relaxed mb-12">
+                    Crafting high-fidelity digital experiences where architectural precision meets engineering mastery.
+                </p>
+<div class="flex gap-8 items-center">
+<button class="bg-primary-container text-on-primary px-10 py-5 font-bold uppercase tracking-widest text-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all">
+                        Explore Works
+                    </button>
+<div class="h-[1px] w-24 bg-outline-variant/30"></div>
+<span class="font-label text-xs uppercase tracking-widest text-outline">Scroll to explore</span>
+</div>
+</div>
+<!-- Absolute decorative corner -->
+<div class="absolute bottom-12 right-12 text-right hidden md:block">
+<div class="font-label text-[10px] text-outline uppercase tracking-[0.5em] mb-2">Coordination System</div>
+<div class="font-body text-primary text-sm tracking-widest">22.5726° N, 88.3639° E</div>
+</div>
+</section>
+<!-- Section 2: Technical Stack Dashboard -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low" id="stack">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div>
+<h3 class="font-headline text-5xl italic text-primary mb-4">Technical Engine</h3>
+<p class="font-body text-outline max-w-md">A curated inventory of the technologies powering my architectural approach to development.</p>
+</div>
+<div class="text-right">
+<span class="font-label text-6xl font-bold text-surface-container-highest tracking-tighter">01 // STACK</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant/10">
+<!-- Stack Category 1 -->
+<div class="bg-surface p-12 hover:bg-surface-container transition-colors duration-500">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h4 class="font-body font-bold uppercase tracking-widest text-sm">Foundations</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Python</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">CORE</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">TensorFlow</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">AI</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Pandas</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">DATA</span>
+</li>
+</ul>
+</div>
+<!-- Stack Category 2 -->
+<div class="bg-surface p-12 hover:bg-surface-container transition-colors duration-500">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="cloud">cloud</span>
+<h4 class="font-body font-bold uppercase tracking-widest text-sm">Infrastructure</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Flask</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">API</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Firebase</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">REALTIME</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Docker</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">OPS</span>
+</li>
+</ul>
+</div>
+<!-- Stack Category 3 -->
+<div class="bg-surface p-12 hover:bg-surface-container transition-colors duration-500">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="view_quilt">view_quilt</span>
+<h4 class="font-body font-bold uppercase tracking-widest text-sm">Interface</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Tailwind CSS</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">UI</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">React</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">APP</span>
+</li>
+<li class="flex justify-between items-center group">
+<span class="font-body text-on-surface group-hover:text-primary transition-colors">Figma</span>
+<span class="font-label text-[10px] text-outline border border-outline-variant/20 px-2 py-1">ARCH</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Section 3: Case Studies / Projects -->
+<section class="py-32 px-8 md:px-24 bg-surface" id="work">
+<div class="mb-24">
+<h3 class="font-headline text-6xl italic text-on-surface mb-4">The Project Archive</h3>
+<div class="h-1 w-24 bg-primary-container mb-8"></div>
+</div>
+<div class="space-y-32">
+<!-- Project 1: Student Dropout Predictor -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-7 relative group overflow-hidden bg-surface-container-low">
+<img alt="Data Visualization" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Complex data visualization dashboard with nodes and connections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOVsrl4f_ShysPlWlezZ4okuUljcGIsUXmYEOMpfmL6H83BEzYVsvGq4jpDuMUMj9R8UEo3ZBOfoUXBKfaHLQ0gi098X9p0_w4-v4AB07vWCimyiF_NXEtRzs62JGCsWBBmAcs_XxV7tudMzf7GC3iUkOQBMJ305efo8fOMzZwpzOwDvcdZkE_WLHz0DbdfsVrSTh9mI92s1g6gDVsue9Fh8praEmXaVfyKCnhd7vRn538Yppb-R5I5oa4xEru1kVOe5dsJBeLg4Y"/>
+<div class="absolute inset-0 bg-primary-container/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</div>
+<div class="lg:col-span-5 pt-4">
+<span class="font-label text-xs font-bold uppercase tracking-[0.3em] text-outline mb-4 block">Case Study 01</span>
+<h4 class="font-headline text-5xl mb-6 text-primary">Student Dropout Predictor</h4>
+<p class="font-body text-on-surface/80 leading-relaxed mb-8">
+                            A high-fidelity predictive model leveraging machine learning to identify at-risk students based on historical academic and socio-economic data. Built with an editorial dashboard for administrative action.
+                        </p>
+<div class="flex flex-wrap gap-4 mb-10">
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">Scikit-Learn</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">Flask</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">PostgreSQL</span>
+</div>
+</div>
+<button class="font-body text-primary-container font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-4 group hover:gap-6 transition-all">
+                            View Technical Abstract <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 2: Poem Generator -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 pt-4 lg:order-1 order-2">
+<span class="font-label text-xs font-bold uppercase tracking-[0.3em] text-outline mb-4 block">Case Study 02</span>
+<h4 class="font-headline text-5xl mb-6 text-primary">Neural Verses</h4>
+<p class="font-body text-on-surface/80 leading-relaxed mb-8">
+                            An AI-driven poem generator that utilizes NLP architectures to synthesize lyrical content across various styles and epochs. Merging literary tradition with algorithmic precision.
+                        </p>
+<div class="flex flex-wrap gap-4 mb-10">
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">PyTorch</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">Transformers</span>
+</div>
+</div>
+<button class="font-body text-primary-container font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-4 group hover:gap-6 transition-all">
+                            Analyze Logic <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="lg:col-span-7 relative group overflow-hidden bg-surface-container-low lg:order-2 order-1">
+<img alt="Classical Text and AI" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Macro photo of typewriter keys or vintage manuscripts mixed with digital elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcZOnuPAdsk5rwZeJPBU2ID9RuMKWNqyrOXz6NYUlMpJo0g5pCeSro9IETBZG0XbSgr3VmC6qTkDokre6s-TJLbkEH2Jxk794QdoC7c9mS2C_o06MUDaLygSUtMl-Y1EeirXQlXzah1tsUTub5i6aD7-Ld6iDimn2otXLfFGzdJ9FPybUEi8rQ_bVwZNMvFTyehennjozNPZNIr1F1kKwl9uA2b-jU3Agen3xb-g8x6XQ8KBXTM7nymxdnGupxMQX9cf5uYeVAX5k"/>
+</div>
+</div>
+<!-- Project 3: PDF Converter -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-7 relative group overflow-hidden bg-surface-container-low">
+<img alt="Architectural Blueprint" class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Blueprint of a technical system or circuit board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXZ2ok6N6JcSMWbV45PSGqh5Jsg85Kx2Rsy4BusgQ9dhELYfxAGx1BkY-Hh9oK0aBWfr7vc0oRPXNEz_NpW2UwrMISFGdp5RM7YtYdVt578Fx2Egi0ozND9cyaFlohX_tnw296CSlr8frtkmCFk3Kg3wxdU1lTTVSPf1IwqMp8fTvpYfLm95L531kZuqROcM3A6iGbMWxC2_MLLM4MfNsebb0UXBDCbDgZXbyrloynNZdRUb5pVIGVD9yZmsci41CnyVy1iTKbMI0"/>
+</div>
+<div class="lg:col-span-5 pt-4">
+<span class="font-label text-xs font-bold uppercase tracking-[0.3em] text-outline mb-4 block">Case Study 03</span>
+<h4 class="font-headline text-5xl mb-6 text-primary">PDF Architecture Tool</h4>
+<p class="font-body text-on-surface/80 leading-relaxed mb-8">
+                            A high-speed conversion utility focused on structural preservation. Designed for enterprise workflows requiring rigid adherence to typographic layouts during document transformation.
+                        </p>
+<div class="flex flex-wrap gap-4 mb-10">
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">Python</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest px-4 py-2">
+<div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+<span class="font-label text-[10px] font-medium uppercase tracking-widest">FastAPI</span>
+</div>
+</div>
+<button class="font-body text-primary-container font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-4 group hover:gap-6 transition-all">
+                            Examine System <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Accreditations -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-lowest" id="achievements">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-4">
+<h3 class="font-headline text-5xl italic text-on-surface mb-6">Accreditations</h3>
+<p class="font-body text-outline">Recognitions for architectural excellence in code and competitive development environments.</p>
+</div>
+<div class="md:col-span-8 space-y-px bg-outline-variant/10">
+<div class="bg-surface p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-surface-container transition-colors">
+<div>
+<h5 class="font-headline text-2xl text-primary mb-1">Global Hackathon Finalist</h5>
+<p class="font-body text-outline text-sm uppercase tracking-widest">AI Innovation Summit 2023</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary transition-colors" data-icon="trophy">trophy</span>
+</div>
+<div class="bg-surface p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-surface-container transition-colors">
+<div>
+<h5 class="font-headline text-2xl text-primary mb-1">Top 1% Engineering Talent</h5>
+<p class="font-body text-outline text-sm uppercase tracking-widest">Regional Technical Benchmark</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary transition-colors" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div class="bg-surface p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 group hover:bg-surface-container transition-colors">
+<div>
+<h5 class="font-headline text-2xl text-primary mb-1">Core Architecture Contributor</h5>
+<p class="font-body text-outline text-sm uppercase tracking-widest">Open Source ML Frameworks</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-primary transition-colors" data-icon="token">token</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Hire Me / Contact -->
+<section class="relative py-48 px-8 md:px-24 overflow-hidden" id="contact">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-[conic-gradient(from_0deg_at_50%_50%,_#0b1326,_#171f33,_#0b1326)]"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<h3 class="font-label text-xs font-bold uppercase tracking-[0.5em] text-primary mb-12">System Availability: HIGH</h3>
+<h4 class="font-headline text-6xl md:text-8xl italic text-on-surface mb-12 leading-tight">
+                    Let's Build the <span class="text-primary-container">Next Monolith.</span>
+</h4>
+<p class="font-body text-xl text-outline mb-16 max-w-2xl mx-auto leading-relaxed">
+                    Open for high-impact collaborations, technical consulting, and architectural inquiries.
+                </p>
+<a class="inline-block bg-primary-container text-on-primary px-16 py-6 font-bold uppercase tracking-[0.3em] text-sm hover:translate-y-[-4px] transition-transform" href="mailto:hello@tirtharaj.dev">
+                    Initialize Connection
+                </a>
+</div>
+</section>
+<!-- Footer Shared Component -->
+<footer class="relative w-full py-16 bg-[#060e20] border-t border-[#3b494c]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
+<div class="font-['Newsreader'] text-lg text-[#c3f5ff] mb-8 md:mb-0">Tirtharaj Dutta Roy</div>
+<div class="flex gap-12 mb-8 md:mb-0">
+<a class="text-[#849396] hover:text-[#c3f5ff] transition-opacity opacity-80 hover:opacity-100 hover:underline decoration-[#00e5ff] underline-offset-4 font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em]" href="#">LinkedIn</a>
+<a class="text-[#849396] hover:text-[#c3f5ff] transition-opacity opacity-80 hover:opacity-100 hover:underline decoration-[#00e5ff] underline-offset-4 font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em]" href="#">GitHub</a>
+<a class="text-[#849396] hover:text-[#c3f5ff] transition-opacity opacity-80 hover:opacity-100 hover:underline decoration-[#00e5ff] underline-offset-4 font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em]" href="#">Read.cv</a>
+</div>
+<div class="font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em] text-[#849396]">
+                    © 2024 Tirtharaj Dutta Roy. Built for Precision.
+                </div>
+</div>
+</footer>
+</main>
+<!-- Floating UI Decoration (Architectural Detail) -->
+<div class="fixed bottom-8 left-8 z-50 pointer-events-none hidden xl:block">
+<div class="flex gap-4 items-center">
+<div class="w-10 h-10 border border-outline-variant/30 flex items-center justify-center">
+<span class="font-label text-[8px] text-outline">v.1.0</span>
+</div>
+<div class="h-[1px] w-24 bg-outline-variant/30"></div>
+</div>
+</div>
+</body></html>

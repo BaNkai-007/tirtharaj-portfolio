@@ -1,0 +1,65 @@
+/* ============================================================
+   Skills.css — Skills section layout
+   ============================================================ */
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skills__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skills__category {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skills__pill {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  transition: border-color var(--duration-fast) var(--ease-out-expo);
+}
+
+.skills__pill:hover {
+  border-color: var(--color-accent);
+}

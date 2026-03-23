@@ -1,0 +1,40 @@
+person:
+  name: Tirtharaj Dutta Roy
+  role: Computer Science Engineer | ML & Software Developer
+  contact: tirtharajdroy@gmail.com | LinkedIn: tirtharaj-d-roy | GitHub: BaNkai-007
+  education: B.Tech CSE, Lovely Professional University (2023-Present)
+
+projects:
+  - id: dropout_predictor
+    title: Student-Dropout Predictor
+    link: [INSERT_URL_HERE]
+    category: Machine Learning
+    stack: Python, Streamlit, Scikit-Learn, Pandas, SMOTE
+    impact: Handled 12% class imbalance; boosted minority class Recall from 0.78 to 0.95. Achieved <500ms inference.
+    ui_concept: "Render as a precise, data-driven node graph."
+
+  - id: pdf_converter
+    title: Image to PDF Converter
+    link: [INSERT_URL_HERE]
+    category: Mobile Engineering
+    stack: Flutter, Dart, Android Studio
+    impact: 100% local batch processing of 50+ high-res images with zero API dependency.
+    ui_concept: "Render with a clean, utilitarian, mobile-first grid aesthetic."
+
+  - id: poem_generator
+    title: Emotion-Based Poem Generator
+    link: [INSERT_URL_HERE]
+    category: Generative AI
+    stack: HTML5, CSS3, JavaScript, OpenAI API
+    impact: Context-aware prompt system for 3+ languages; maintained 60 FPS UI during 3-4s API latency.
+    ui_concept: "Render with fluid, shifting color gradients mapping to sentiment."
+
+skills:
+  languages: [C++, Python, Java, JavaScript]
+  frameworks: [Flask, Flutter, Scikit-learn, XGBoost, MySQL]
+  tools: [Git, GitHub, VSCode, JupyterLabs]
+  core: [Data Processing, Model Building, ML Algorithms]
+
+achievements:
+  - Finalist: Binary Blitz Hackathon
+  - Qualifier: SIH 2024 University Preliminary Hackathon

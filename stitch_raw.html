@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tirtharaj Dutta Roy | Neural Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#fd7e96",
+                        "on-error": "#490013",
+                        outline: "#876b94",
+                        "on-secondary-fixed-variant": "#713494",
+                        surface: "#0a0212",
+                        "on-secondary": "#49016d",
+                        "on-tertiary": "#680827",
+                        "secondary-container": "#662989",
+                        "on-primary-container": "#330065",
+                        "secondary-fixed": "#ecc3ff",
+                        "surface-variant": "#240d31",
+                        "inverse-surface": "#fff7fc",
+                        "on-primary": "#430081",
+                        "on-primary-fixed-variant": "#40007b",
+                        "surface-container-lowest": "#000000",
+                        secondary: "#d390f7",
+                        "primary-fixed": "#bc87ff",
+                        "on-tertiary-container": "#56001d",
+                        "surface-tint": "#c69aff",
+                        "on-surface": "#f7ddff",
+                        "primary-container": "#bc87ff",
+                        "on-error-container": "#ffb2b9",
+                        "on-secondary-fixed": "#521075",
+                        "tertiary-fixed-dim": "#f97c93",
+                        "on-background": "#f7ddff",
+                        "error-dim": "#d73357",
+                        error: "#ff6e84",
+                        "on-tertiary-fixed-variant": "#71112d",
+                        "on-secondary-container": "#ecc1ff",
+                        "on-tertiary-fixed": "#390010",
+                        "error-container": "#a70138",
+                        "primary-fixed-dim": "#b175ff",
+                        "tertiary-dim": "#f3778e",
+                        "tertiary-fixed": "#ff8fa2",
+                        "surface-container-highest": "#371749",
+                        "outline-variant": "#573e64",
+                        "secondary-fixed-dim": "#e5b0ff",
+                        "surface-container-low": "#12041d",
+                        "on-surface-variant": "#bfa0cc",
+                        "primary-dim": "#944eea",
+                        "inverse-primary": "#7d33d2",
+                        "surface-bright": "#3f1c53",
+                        primary: "#c69aff",
+                        "on-primary-fixed": "#000000",
+                        "inverse-on-surface": "#654b72",
+                        "surface-container": "#1a0427",
+                        background: "#0a0212",
+                        "surface-container-high": "#230b35",
+                        "surface-dim": "#0a0212",
+                        "secondary-dim": "#c583e9",
+                        tertiary: "#ff94a6"
+                    },
+                    fontFamily: {
+                        headline: ["Syne", "sans-serif"],
+                        body: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                        display: ["Syne", "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 10, 50, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(188, 135, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            border-color: rgba(188, 135, 255, 0.4);
+            box-shadow: 0 0 30px rgba(188, 135, 255, 0.1);
+        }
+        .code-matrix {
+            background-image: radial-gradient(rgba(188, 135, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .blueprint-text {
+            text-shadow: 2px 2px 0px rgba(188, 135, 255, 0.1);
+            letter-spacing: -0.04em;
+        }
+        .magnetic {
+            transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+        #neural-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        .skill-ring {
+            transition: stroke-dashoffset 1.5s ease-out;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+        }
+        .skill-container:hover .skill-ring {
+            stroke-dashoffset: var(--target-offset);
+        }
+        .project-reveal {
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .project-reveal {
+            transform: translateY(0);
+        }
+        .glowing-accent {
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(188, 135, 255, 0.15) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl border-b border-white/5">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-xl font-extrabold text-primary tracking-tighter font-headline uppercase magnetic-wrap group">
+<span class="inline-block transition-transform group-hover:scale-105">Tirtharaj Dutta Roy</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-headline font-bold text-[11px] uppercase tracking-[0.2em] text-slate-400 hover:text-primary transition-all hover:tracking-[0.3em] magnetic" href="#projects">Projects</a>
+<a class="font-headline font-bold text-[11px] uppercase tracking-[0.2em] text-slate-400 hover:text-primary transition-all hover:tracking-[0.3em] magnetic" href="#skills">Skills</a>
+<a class="font-headline font-bold text-[11px] uppercase tracking-[0.2em] text-slate-400 hover:text-primary transition-all hover:tracking-[0.3em] magnetic" href="#achievements">Achievements</a>
+</nav>
+<div class="flex gap-4">
+<button class="material-symbols-outlined p-2 text-primary hover:bg-primary/10 transition-all duration-300 rounded-full magnetic" data-icon="mail">mail</button>
+<button class="material-symbols-outlined p-2 text-primary hover:bg-primary/10 transition-all duration-300 rounded-full magnetic" data-icon="terminal">terminal</button>
+</div>
+</div>
+</header>
+<aside class="fixed left-0 h-full w-20 hover:w-64 transition-all duration-500 z-40 bg-slate-950/80 backdrop-blur-2xl flex flex-col items-center py-8 gap-8 group border-r border-white/5">
+<div class="flex flex-col items-center gap-2 group-hover:items-start group-hover:px-6 w-full overflow-hidden transition-all">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-primary/20 shrink-0 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="hidden group-hover:block transition-all opacity-0 group-hover:opacity-100 delay-100">
+<p class="text-primary font-extrabold font-headline text-xs uppercase tracking-widest truncate">T. Dutta Roy</p>
+<p class="text-[9px] text-slate-500 font-mono tracking-wider uppercase truncate">Neural Architect</p>
+</div>
+</div>
+<nav class="flex flex-col w-full gap-2 mt-8">
+<a class="flex items-center gap-4 px-6 py-4 bg-primary/10 text-primary border-r-4 border-primary font-headline font-bold text-[10px] uppercase tracking-[0.2em] transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Hero</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:text-primary hover:bg-white/5 font-headline font-bold text-[10px] uppercase tracking-[0.2em] transition-all" href="#skills">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Skills</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:text-primary hover:bg-white/5 font-headline font-bold text-[10px] uppercase tracking-[0.2em] transition-all" href="#projects">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Projects</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-500 hover:text-primary hover:bg-white/5 font-headline font-bold text-[10px] uppercase tracking-[0.2em] transition-all" href="#achievements">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Awards</span>
+</a>
+</nav>
+</aside>
+<main class="ml-20 min-h-screen code-matrix relative">
+<div class="fixed inset-0 pointer-events-none glowing-accent z-0" id="mouse-glow"></div>
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col justify-center px-8 md:px-24 overflow-hidden" id="hero">
+<canvas id="neural-bg"></canvas>
+<div class="max-w-6xl space-y-6 relative z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container/50 backdrop-blur-md border border-outline-variant/20 rounded-full mb-8">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[9px] font-mono uppercase tracking-[0.3em] text-on-surface-variant">System Status: Neural Active</span>
+</div>
+<h1 class="text-7xl md:text-9xl font-headline font-extrabold text-on-surface leading-[0.85] blueprint-text">
+                TIRTHARAJ <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-[gradient-shift_4s_linear_infinite]">DUTTA ROY</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl font-body leading-relaxed tracking-tight">
+                Computer Science Engineer specializing in <span class="text-primary-fixed font-medium">Neural Architectures</span>, ML Optimization, and full-stack software development.
+            </p>
+<div class="flex flex-wrap gap-6 mt-12">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-lg font-headline font-extrabold uppercase tracking-[0.25em] text-xs hover:brightness-110 hover:tracking-[0.3em] transition-all flex items-center gap-3 magnetic shadow-lg shadow-primary/20">
+                    Execute Journey
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="bg-surface-variant/20 border border-primary/30 text-primary px-10 py-5 rounded-lg font-headline font-extrabold uppercase tracking-[0.25em] text-xs hover:bg-primary/10 transition-all backdrop-blur-sm magnetic">
+                    View Matrix
+                </button>
+</div>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block">
+<div class="w-[700px] h-[700px] border border-primary/5 rounded-full flex items-center justify-center animate-spin-slow">
+<div class="w-[500px] h-[500px] border border-secondary/10 rounded-full flex items-center justify-center animate-pulse-slow">
+<div class="w-[300px] h-[300px] border border-primary/20 rounded-full border-dashed"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Dashboard Section -->
+<section class="py-24 px-8 md:px-24 bg-surface-container-low/50 relative" id="skills">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="space-y-2">
+<span class="text-[10px] font-mono uppercase tracking-[0.4em] text-primary">Capabilities</span>
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tighter blueprint-text uppercase">Technical Stack</h2>
+</div>
+<div class="text-right font-mono text-[9px] text-on-surface-variant tracking-[0.3em] uppercase">
+                    Current Kernel: v4.2.0 • LPU B.Tech CSE
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Circular Visualizations (Language) -->
+<div class="glass-card p-8 rounded-xl flex flex-col items-center justify-center gap-6 skill-container">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant stroke-current" cx="50" cy="50" fill="transparent" r="45" stroke-width="8"></circle>
+<circle class="text-primary stroke-current skill-ring" cx="50" cy="50" fill="transparent" r="45" stroke-linecap="round" stroke-width="8" style="--target-offset: 14;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-headline font-extrabold text-on-surface">95%</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Processing Core</p>
+<h4 class="text-sm font-headline font-bold uppercase text-on-surface">C++ &amp; Python</h4>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl flex flex-col items-center justify-center gap-6 skill-container">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant stroke-current" cx="50" cy="50" fill="transparent" r="45" stroke-width="8"></circle>
+<circle class="text-secondary stroke-current skill-ring" cx="50" cy="50" fill="transparent" r="45" stroke-linecap="round" stroke-width="8" style="--target-offset: 34;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-headline font-extrabold text-on-surface">88%</span>
+</div>
+</div>
+<div class="text-center">
+<p class="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Interface Engine</p>
+<h4 class="text-sm font-headline font-bold uppercase text-on-surface">Java &amp; JS</h4>
+</div>
+</div>
+<!-- Frameworks -->
+<div class="glass-card p-8 rounded-xl">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="layers">layers</span>
+<span class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.2em]">FRAMEWORKS</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container rounded-sm text-[9px] font-mono uppercase text-on-surface-variant border border-outline-variant/20 hover:border-secondary/50 transition-colors">Scikit-learn</span>
+<span class="px-2 py-1 bg-surface-container rounded-sm text-[9px] font-mono uppercase text-on-surface-variant border border-outline-variant/20 hover:border-secondary/50 transition-colors">Flask</span>
+<span class="px-2 py-1 bg-surface-container rounded-sm text-[9px] font-mono uppercase text-on-surface-variant border border-outline-variant/20 hover:border-secondary/50 transition-colors">Flutter</span>
+<span class="px-2 py-1 bg-surface-container rounded-sm text-[9px] font-mono uppercase text-on-surface-variant border border-outline-variant/20 hover:border-secondary/50 transition-colors">XGBoost</span>
+<span class="px-2 py-1 bg-surface-container rounded-sm text-[9px] font-mono uppercase text-on-surface-variant border border-outline-variant/20 hover:border-secondary/50 transition-colors">MySQL</span>
+</div>
+</div>
+<!-- Live Pulse -->
+<div class="glass-card p-8 rounded-xl flex flex-col justify-between overflow-hidden relative">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[9px] font-mono text-slate-500 uppercase tracking-[0.2em]">SYSTEM LOAD</span>
+</div>
+<div class="flex items-end gap-1 h-24">
+<div class="flex-1 bg-primary/20 h-[40%] animate-[pulse_2s_infinite]"></div>
+<div class="flex-1 bg-primary/40 h-[70%] animate-[pulse_2.5s_infinite]"></div>
+<div class="flex-1 bg-primary/20 h-[30%] animate-[pulse_1.5s_infinite]"></div>
+<div class="flex-1 bg-primary h-[90%]"></div>
+<div class="flex-1 bg-primary/60 h-[50%] animate-[pulse_3s_infinite]"></div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] font-mono text-on-surface-variant tracking-wider uppercase">
+<span>Neural Threads</span>
+<span class="text-primary font-bold">Stable</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Overview Section -->
+<section class="py-24 px-8 md:px-24" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="text-[10px] font-mono uppercase tracking-[0.4em] text-secondary">Repository</span>
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tighter blueprint-text uppercase">Core Deployments</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Project 1: Dropout Predictor -->
+<div class="group relative aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent z-10 transition-opacity group-hover:opacity-20"></div>
+<div class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-1000 bg-[url('https://images.unsplash.com/photo-1518186239717-2e9b136758e5?q=80&amp;w=1974&amp;auto=format&amp;fit=crop')] bg-cover bg-center"></div>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full transition-transform duration-500 group-hover:-translate-y-full">
+<div class="flex gap-2 mb-4">
+<span class="bg-primary/20 text-primary border border-primary/30 text-[9px] px-2 py-0.5 rounded-sm uppercase font-mono tracking-widest">ML Architecture</span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold mb-2 tracking-tighter uppercase">Dropout Predictor</h3>
+<p class="text-xs text-on-surface-variant font-mono uppercase">Node-Graph Optimization</p>
+</div>
+<!-- Deep Dive Overlay -->
+<div class="absolute inset-0 z-30 bg-primary/5 backdrop-blur-xl p-8 flex flex-col justify-end project-reveal border border-primary/20">
+<div class="mb-auto">
+<h4 class="text-primary font-mono text-[10px] uppercase tracking-[0.3em] mb-4">Technical Deep Dive</h4>
+<div class="space-y-4">
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Stack</p>
+<p class="text-xs font-bold text-on-surface">Python, Streamlit, Scikit-Learn, Pandas, SMOTE</p>
+</div>
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Impact Metric</p>
+<p class="text-xs text-on-surface leading-relaxed">Boosted minority Recall from 0.78 to 0.95. Inference latency &lt;500ms.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-primary text-[10px] font-headline font-extrabold uppercase tracking-[0.2em] mt-8 group/link" href="#">
+                            Analyze Source
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 2: PDF Converter -->
+<div class="group relative aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent z-10 transition-opacity group-hover:opacity-20"></div>
+<div class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-1000 bg-[url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center"></div>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full transition-transform duration-500 group-hover:-translate-y-full">
+<div class="flex gap-2 mb-4">
+<span class="bg-secondary/20 text-secondary border border-secondary/30 text-[9px] px-2 py-0.5 rounded-sm uppercase font-mono tracking-widest">Mobile Engineering</span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold mb-2 tracking-tighter uppercase">PDF Converter</h3>
+<p class="text-xs text-on-surface-variant font-mono uppercase">Zero-API Batch System</p>
+</div>
+<div class="absolute inset-0 z-30 bg-secondary/5 backdrop-blur-xl p-8 flex flex-col justify-end project-reveal border border-secondary/20">
+<div class="mb-auto">
+<h4 class="text-secondary font-mono text-[10px] uppercase tracking-[0.3em] mb-4">Technical Deep Dive</h4>
+<div class="space-y-4">
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Stack</p>
+<p class="text-xs font-bold text-on-surface">Flutter, Dart, Android Studio</p>
+</div>
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Impact Metric</p>
+<p class="text-xs text-on-surface leading-relaxed">100% local processing of 50+ high-res images with zero dependency.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary text-[10px] font-headline font-extrabold uppercase tracking-[0.2em] mt-8 group/link" href="#">
+                            Analyze Source
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Project 3: Poem Generator -->
+<div class="group relative aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent z-10 transition-opacity group-hover:opacity-20"></div>
+<div class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-1000 bg-[url('https://images.unsplash.com/photo-1520004434532-668416a08753?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center"></div>
+<div class="absolute bottom-0 left-0 p-8 z-20 w-full transition-transform duration-500 group-hover:-translate-y-full">
+<div class="flex gap-2 mb-4">
+<span class="bg-primary/20 text-primary border border-primary/30 text-[9px] px-2 py-0.5 rounded-sm uppercase font-mono tracking-widest">Generative AI</span>
+</div>
+<h3 class="text-3xl font-headline font-extrabold mb-2 tracking-tighter uppercase">Poem Generator</h3>
+<p class="text-xs text-on-surface-variant font-mono uppercase">Emotion-to-Lyrical Logic</p>
+</div>
+<div class="absolute inset-0 z-30 bg-primary/5 backdrop-blur-xl p-8 flex flex-col justify-end project-reveal border border-primary/20">
+<div class="mb-auto">
+<h4 class="text-primary font-mono text-[10px] uppercase tracking-[0.3em] mb-4">Technical Deep Dive</h4>
+<div class="space-y-4">
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Stack</p>
+<p class="text-xs font-bold text-on-surface">OpenAI API, HTML5, CSS3, JS</p>
+</div>
+<div>
+<p class="text-[9px] text-slate-500 uppercase font-mono mb-1">Impact Metric</p>
+<p class="text-xs text-on-surface leading-relaxed">Context-aware 3+ languages; 60 FPS UI stability during API latency.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 text-primary text-[10px] font-headline font-extrabold uppercase tracking-[0.2em] mt-8 group/link" href="#">
+                            Analyze Source
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_outward">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements Bento -->
+<section class="py-24 px-8 md:px-24 bg-surface-container-lowest" id="achievements">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center gap-8 mb-16">
+<h2 class="text-4xl font-headline font-extrabold whitespace-nowrap tracking-tighter uppercase">Accreditations</h2>
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 glass-card p-10 rounded-xl flex items-center justify-between group overflow-hidden">
+<div class="relative z-10">
+<p class="text-[9px] font-mono uppercase text-primary tracking-[0.3em] mb-3">Hackathon Finalist</p>
+<h4 class="text-2xl font-headline font-extrabold uppercase tracking-tight">Binary Blitz Hackathon</h4>
+<p class="text-xs text-slate-500 mt-2">SIH 2024 University Preliminary Qualifier</p>
+</div>
+<span class="material-symbols-outlined text-7xl opacity-10 group-hover:opacity-40 transition-opacity text-primary absolute right-4 top-1/2 -translate-y-1/2" data-icon="terminal">terminal</span>
+</div>
+<div class="glass-card p-10 rounded-xl text-center group">
+<p class="text-5xl font-headline font-extrabold text-secondary mb-2 group-hover:scale-110 transition-transform">9.2</p>
+<p class="text-[9px] font-mono uppercase text-on-surface-variant tracking-[0.2em]">CGPA METRIC</p>
+</div>
+<div class="glass-card p-10 rounded-xl text-center group">
+<p class="text-5xl font-headline font-extrabold text-primary mb-2 group-hover:scale-110 transition-transform">15+</p>
+<p class="text-[9px] font-mono uppercase text-on-surface-variant tracking-[0.2em]">DEPLOYED NODES</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full py-16 border-t border-white/5 bg-slate-950 flex flex-col items-center justify-center gap-6">
+<div class="flex gap-12">
+<a class="font-headline font-extrabold text-[10px] tracking-[0.3em] uppercase text-slate-600 hover:text-primary transition-all magnetic" href="https://github.com/BaNkai-007">Github</a>
+<a class="font-headline font-extrabold text-[10px] tracking-[0.3em] uppercase text-slate-600 hover:text-primary transition-all magnetic" href="https://linkedin.com/in/tirtharaj-d-roy">LinkedIn</a>
+<a class="font-headline font-extrabold text-[10px] tracking-[0.3em] uppercase text-slate-600 hover:text-primary transition-all magnetic" href="mailto:tirtharajdroy@gmail.com">Contact</a>
+</div>
+<p class="font-mono text-[9px] tracking-[0.3em] uppercase text-slate-700">
+            © 2024 THE NEURAL ARCHITECT • TIRTHARAJ DUTTA ROY
+        </p>
+</footer>
+</main>
+<!-- Contextual FAB -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-16 h-16 bg-primary text-on-primary rounded-full shadow-[0_20px_40px_rgba(188,135,255,0.3)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all group magnetic">
+<span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform" data-icon="rocket">rocket</span>
+</button>
+</div>
+<script>
+    // Neural Background Animation
+    const canvas = document.getElementById('neural-bg');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let mouse = { x: null, y: null };
+
+    function initCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 1;
+            this.baseX = this.x;
+            this.baseY = this.y;
+            this.density = (Math.random() * 30) + 1;
+        }
+
+        draw() {
+            ctx.fillStyle = '#c69aff';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        update() {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            let forceDirectionX = dx / distance;
+            let forceDirectionY = dy / distance;
+            let maxDistance = 150;
+            let force = (maxDistance - distance) / maxDistance;
+            let directionX = forceDirectionX * force * this.density;
+            let directionY = forceDirectionY * force * this.density;
+
+            if (distance < maxDistance) {
+                this.x -= directionX;
+                this.y -= directionY;
+            } else {
+                if (this.x !== this.baseX) {
+                    let dx = this.x - this.baseX;
+                    this.x -= dx / 10;
+                }
+                if (this.y !== this.baseY) {
+                    let dy = this.y - this.baseY;
+                    this.y -= dy / 10;
+                }
+            }
+        }
+    }
+
+    function init() {
+        particles = [];
+        for (let i = 0; i < 100; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].draw();
+            particles[i].update();
+        }
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+        
+        // Mouse glow accent
+        document.documentElement.style.setProperty('--x', e.clientX + 'px');
+        document.documentElement.style.setProperty('--y', e.clientY + 'px');
+        const glow = document.getElementById('mouse-glow');
+        glow.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(188, 135, 255, 0.12) 0%, transparent 60%)`;
+    });
+
+    window.addEventListener('resize', () => {
+        initCanvas();
+        init();
+    });
+
+    // Magnetic Button Effect
+    document.querySelectorAll('.magnetic').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px)';
+        });
+    });
+
+    // Skill Ring Animation on Scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-reveal');
+                const rings = entry.target.querySelectorAll('.skill-ring');
+                rings.forEach(ring => {
+                    const offset = ring.getAttribute('style').match(/--target-offset:\s*(\d+)/)[1];
+                    ring.style.strokeDashoffset = offset;
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.skill-container').forEach(card => observer.observe(card));
+
+    initCanvas();
+    init();
+    animate();
+</script>
+</body></html>

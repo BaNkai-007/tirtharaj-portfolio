@@ -1,0 +1,49 @@
+/* ============================================================
+   Contact.css — Contact section layout
+   ============================================================ */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-block: var(--space-12);
+}
+
+.contact__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.contact__link {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: border-color var(--duration-fast) var(--ease-out-expo),
+              color var(--duration-fast) var(--ease-out-expo),
+              box-shadow var(--duration-fast) var(--ease-out-expo);
+}
+
+.contact__link:hover,
+.contact__link:focus-visible {
+  border-color: var(--color-accent);
+  color: var(--color-accent-glow);
+  box-shadow: var(--glow-accent);
+}
+
+@media (max-width: 768px) {
+  .contact__links {
+    flex-direction: column;
+  }
+}

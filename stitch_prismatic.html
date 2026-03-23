@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tirtharaj Dutta Roy | Neural Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#6f005b",
+              "on-tertiary": "#430036",
+              "on-secondary-fixed-variant": "#006266",
+              "background": "#0d0d17",
+              "error": "#ff6e84",
+              "inverse-surface": "#fcf8ff",
+              "surface-container-low": "#12121e",
+              "on-primary-container": "#330065",
+              "secondary-fixed": "#00f5fc",
+              "on-surface-variant": "#aca9b8",
+              "on-primary-fixed-variant": "#40007b",
+              "tertiary-fixed": "#ff87da",
+              "outline": "#757481",
+              "surface-variant": "#252433",
+              "tertiary-dim": "#ff5ed6",
+              "secondary-fixed-dim": "#00e5ed",
+              "on-secondary": "#00585b",
+              "on-tertiary-container": "#0e000a",
+              "on-primary": "#430081",
+              "on-secondary-container": "#defeff",
+              "on-primary-fixed": "#000000",
+              "primary-fixed-dim": "#b175ff",
+              "surface-container": "#181825",
+              "tertiary": "#ff5ed6",
+              "primary-dim": "#9840ff",
+              "on-secondary-fixed": "#004346",
+              "surface-tint": "#c69aff",
+              "surface": "#0d0d17",
+              "surface-bright": "#2b2b3b",
+              "on-error-container": "#ffb2b9",
+              "secondary-dim": "#00e5ed",
+              "surface-container-lowest": "#000000",
+              "on-background": "#e7e3f3",
+              "secondary-container": "#00696d",
+              "surface-container-highest": "#252433",
+              "on-tertiary-fixed": "#34002a",
+              "error-container": "#a70138",
+              "primary": "#c69aff",
+              "tertiary-fixed-dim": "#ff6bd7",
+              "surface-container-high": "#1e1e2c",
+              "primary-container": "#bc87ff",
+              "surface-dim": "#0d0d17",
+              "secondary": "#00f5fc",
+              "inverse-primary": "#8400f4",
+              "inverse-on-surface": "#555460",
+              "primary-fixed": "#bc87ff",
+              "error-dim": "#d73357",
+              "tertiary-container": "#ff00d4",
+              "outline-variant": "#474753",
+              "on-surface": "#e7e3f3",
+              "on-error": "#490013"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Space Grotesk"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #0d0d17; color: #e7e3f3; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .prismatic-gradient { background: linear-gradient(135deg, #8a00ff 0%, #00f7ff 50%, #ff00d4 100%); }
+        .glass-panel { backdrop-filter: blur(20px); background: rgba(24, 24, 37, 0.6); }
+        .neon-border-purple { box-shadow: 0 0 15px rgba(138, 0, 255, 0.3); border: 1px solid rgba(138, 0, 255, 0.2); }
+        .neon-border-cyan { box-shadow: 0 0 15px rgba(0, 247, 255, 0.3); border: 1px solid rgba(0, 247, 255, 0.2); }
+        .neon-border-magenta { box-shadow: 0 0 15px rgba(255, 0, 212, 0.3); border: 1px solid rgba(255, 0, 212, 0.2); }
+        .floating-shape { position: absolute; filter: blur(40px); opacity: 0.15; z-index: -1; }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- Background Elements -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden">
+<div class="floating-shape w-96 h-96 bg-[#8a00ff] top-[-10%] left-[-5%] rounded-full animate-pulse"></div>
+<div class="floating-shape w-80 h-80 bg-[#00f7ff] bottom-[10%] right-[-5%] rounded-full"></div>
+<div class="floating-shape w-64 h-64 bg-[#ff00d4] middle-center opacity-10"></div>
+</div>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-[#0d0d17]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(138,0,255,0.15)]">
+<div class="text-2xl font-black bg-gradient-to-r from-[#8a00ff] via-[#00f7ff] to-[#ff00d4] bg-clip-text text-transparent font-['Space_Grotesk'] tracking-tight">
+            Tirtharaj Dutta Roy
+        </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-[#00f7ff] border-b-2 border-[#00f7ff] pb-1 font-bold tracking-tight" href="#">Work</a>
+<a class="text-[#aca9b8] hover:text-[#ff00d4] transition-all duration-300 cubic-bezier(0.23,1,0.32,1) font-bold tracking-tight" href="#">Experience</a>
+<a class="text-[#aca9b8] hover:text-[#ff00d4] transition-all duration-300 cubic-bezier(0.23,1,0.32,1) font-bold tracking-tight" href="#">Lab</a>
+<a class="text-[#aca9b8] hover:text-[#ff00d4] transition-all duration-300 cubic-bezier(0.23,1,0.32,1) font-bold tracking-tight" href="#">Contact</a>
+<button class="ml-4 p-2 rounded-lg bg-surface-container-highest/50 text-[#8a00ff]">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</nav>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full z-40 hidden lg:flex flex-col py-12 w-64 bg-[#0d0d17]/80 backdrop-blur-2xl shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="px-8 mb-12 flex flex-col items-center">
+<div class="w-20 h-20 rounded-full prismatic-gradient p-[2px] mb-4">
+<div class="w-full h-full rounded-full bg-surface-container overflow-hidden border-4 border-surface">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="Professional portrait of Tirtharaj Dutta Roy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGSRwBfqSqgCMgnybrECzy8glzeXACdvV087AC-2XBBEadjVX2cBhq8GwHPcWMqMgQ69FN4TTZRuUrwqyjogv3O716A96uTZYzDeZn5MHtVv1WXBGbKQjz8RHHQm4j6Qj9kYWPQldkdTcAlflZYQaBvnNzSIOOKBJIJZZkmTPXn-E7873yv7hGnQzoLLABQCBnfMRW7ozyAA3bpgxKpZXgIak4Z7jXawNTAxv1iIQ9DUyG0USTJkJOksixYldyNthjK_KU5nz0rKc"/>
+</div>
+</div>
+<h3 class="text-[#8a00ff] font-bold text-lg">Tirtharaj D.R.</h3>
+<p class="text-[#aca9b8] text-xs font-bold tracking-widest uppercase">Creative Developer</p>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-4 py-4 px-6 text-[#aca9b8] hover:bg-[#00f7ff]/10 hover:text-[#00f7ff] hover:translate-x-2 transition-all duration-300 font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined">person_4</span> Bio
+            </a>
+<a class="flex items-center gap-4 bg-gradient-to-r from-[#8a00ff]/20 to-transparent text-[#8a00ff] border-l-4 border-[#8a00ff] py-4 px-6 font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">rocket_launch</span> Projects
+            </a>
+<a class="flex items-center gap-4 py-4 px-6 text-[#aca9b8] hover:bg-[#00f7ff]/10 hover:text-[#00f7ff] hover:translate-x-2 transition-all duration-300 font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined">terminal</span> Skills
+            </a>
+<a class="flex items-center gap-4 py-4 px-6 text-[#aca9b8] hover:bg-[#00f7ff]/10 hover:text-[#00f7ff] hover:translate-x-2 transition-all duration-300 font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined">format_quote</span> Testimonials
+            </a>
+<a class="flex items-center gap-4 py-4 px-6 text-[#aca9b8] hover:bg-[#00f7ff]/10 hover:text-[#00f7ff] hover:translate-x-2 transition-all duration-300 font-['Space_Grotesk'] font-bold text-sm tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined">alternate_email</span> Reach Out
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 rounded prismatic-gradient text-on-primary-fixed font-black uppercase tracking-[0.2em] text-xs shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform duration-200">
+                Hire Me
+            </button>
+</div>
+</aside>
+<main class="ml-0 lg:ml-64 pt-20">
+<!-- Prismatic Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-8 lg:px-20 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-full pointer-events-none opacity-40">
+<!-- Abstract Neural Mesh Concept -->
+<svg class="w-full h-full" viewbox="0 0 800 600">
+<defs>
+<radialgradient cx="50%" cy="50%" fx="50%" fy="50%" id="grad1" r="50%">
+<stop offset="0%" style="stop-color:#8a00ff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#0d0d17;stop-opacity:0"></stop>
+</radialgradient>
+</defs>
+<path class="opacity-30" d="M100,300 Q200,100 400,300 T700,300" fill="none" stroke="#00f7ff" stroke-width="0.5"></path>
+<path class="opacity-30" d="M150,350 Q250,150 450,350 T750,350" fill="none" stroke="#ff00d4" stroke-width="0.5"></path>
+<circle cx="200" cy="200" fill="#8a00ff" r="2"></circle>
+<circle cx="400" cy="300" fill="#00f7ff" r="2"></circle>
+<circle cx="600" cy="250" fill="#ff00d4" r="2"></circle>
+</svg>
+</div>
+<div class="relative z-10 max-w-5xl">
+<span class="label-md uppercase tracking-[0.4em] text-secondary font-bold mb-4 block">Architecting Neural Systems</span>
+<h1 class="text-7xl md:text-9xl font-black leading-tight tracking-tighter mb-8">
+<span class="bg-gradient-to-br from-[#8a00ff] via-[#00f7ff] to-[#ff00d4] bg-clip-text text-transparent">
+                        TIRTHARAJ<br/>DUTTA ROY
+                    </span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-12">
+                    A multi-disciplinary <span class="text-on-surface font-bold">Creative Developer</span> specializing in building immersive, neon-infused digital environments where high-fidelity logic meets prismatic artistry.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="px-10 py-5 rounded-md prismatic-gradient text-black font-black uppercase tracking-widest shadow-[0_20px_40px_rgba(0,247,255,0.3)] hover:scale-105 transition-transform duration-300">
+                        Explore Nexus
+                    </button>
+<button class="px-10 py-5 rounded-md border-2 border-outline-variant text-on-surface hover:border-secondary transition-colors font-bold uppercase tracking-widest bg-surface-container-low/50 backdrop-blur-md">
+                        The Blueprint
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Skills Grid -->
+<section class="py-32 px-8 lg:px-20 bg-surface-container-low">
+<div class="mb-20">
+<h2 class="text-5xl font-black tracking-tight mb-4">Neural <span class="text-secondary">Core</span></h2>
+<div class="h-1 w-24 prismatic-gradient rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Skill: C++ (Purple) -->
+<div class="md:col-span-2 lg:col-span-2 glass-panel p-8 rounded-xl neon-border-purple relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-[#8a00ff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-[#8a00ff]">terminal</span>
+<span class="text-xs font-bold text-[#8a00ff] tracking-widest">SYSTEMS ENGINE</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">C++</h3>
+<div class="w-full bg-surface-container rounded-full h-2 mb-2 overflow-hidden">
+<div class="bg-[#8a00ff] h-full shadow-[0_0_10px_#8a00ff]" style="width: 95%"></div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">95% Optimization Proficiency</p>
+</div>
+<!-- Skill: Python (Cyan) -->
+<div class="md:col-span-2 lg:col-span-2 glass-panel p-8 rounded-xl neon-border-cyan relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-[#00f7ff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-[#00f7ff]">neurology</span>
+<span class="text-xs font-bold text-[#00f7ff] tracking-widest">AI &amp; LOGIC</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">Python</h3>
+<div class="w-full bg-surface-container rounded-full h-2 mb-2 overflow-hidden">
+<div class="bg-[#00f7ff] h-full shadow-[0_0_10px_#00f7ff]" style="width: 88%"></div>
+</div>
+<p class="text-sm text-on-surface-variant font-medium">88% Neural Net Dev</p>
+</div>
+<!-- Small Skill: React (Magenta) -->
+<div class="md:col-span-1 lg:col-span-1 glass-panel p-6 rounded-xl border border-outline-variant hover:neon-border-magenta transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-[#ff00d4] mb-4">layers</span>
+<h4 class="font-bold text-lg mb-2">React</h4>
+<div class="h-1 prismatic-gradient w-1/2"></div>
+</div>
+<!-- Small Skill: Web3 (Cyan) -->
+<div class="md:col-span-1 lg:col-span-1 glass-panel p-6 rounded-xl border border-outline-variant hover:neon-border-cyan transition-all duration-300">
+<span class="material-symbols-outlined text-3xl text-secondary mb-4">token</span>
+<h4 class="font-bold text-lg mb-2">Web3</h4>
+<div class="h-1 bg-secondary w-1/2"></div>
+</div>
+<!-- Large Data Visualization Card -->
+<div class="md:col-span-4 lg:col-span-2 glass-panel p-8 rounded-xl border border-outline-variant bg-gradient-to-bl from-surface-container-high to-surface-container-low flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-black mb-6">Real-time Performance</h3>
+<div class="flex items-end gap-2 h-32 mb-6">
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/20 hover:bg-secondary transition-colors h-[85%] rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/20 hover:bg-tertiary transition-colors h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-colors h-[95%] rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/20 hover:bg-secondary transition-colors h-[70%] rounded-t-sm"></div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-bold tracking-widest uppercase">Cross-Platform Syncing Active</p>
+</div>
+</div>
+</section>
+<!-- Interactive Project Cards Section -->
+<section class="py-32 px-8 lg:px-20">
+<div class="flex justify-between items-end mb-20">
+<div>
+<h2 class="text-5xl font-black tracking-tight mb-4 uppercase">The Archive</h2>
+<p class="text-on-surface-variant max-w-md">Selected experiments in high-fidelity interface design and neural simulation.</p>
+</div>
+<div class="hidden md:block text-right">
+<span class="text-6xl font-black text-outline-variant/20 tracking-tighter">01 // 03</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Project 1 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl p-[1px] transition-all duration-500 hover:shadow-[0_0_50px_rgba(138,0,255,0.4)]">
+<!-- Shifting Gradient Border -->
+<div class="absolute inset-0 prismatic-gradient opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative bg-surface p-8 h-full rounded-2xl overflow-hidden">
+<div class="relative h-80 mb-8 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" data-alt="Abstract 3D data visualization landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIg3audypj_O4cOxm1AIMDN7QSRLjBTHPx1FjabbxUygKQG0NJJDNg4F6iLmePprEeG_Uo2Q3DijTMcFi0gKNvg9sDmUTqsD04O56JioD2O56_RaJO9Oevy6k6D4rtcEmIm6WRQ3w8nECvb-PPup4IE7PoLiYobXC2oWJYePeVM3jsZilungKNVshuRXEN3Z2_eCldzAv0WJ4Q2g0pmC1tBj68hl2vDIQB72al2T0jdFdNMlsOygyqeuafY5gNZpxZMn2iJ_NmuKI"/>
+<!-- Holographic Overlay -->
+<div class="absolute inset-0 bg-[#8a00ff]/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-500 flex items-center justify-center">
+<span class="bg-black text-on-surface px-6 py-2 rounded-full font-bold uppercase tracking-widest border border-primary">View Prototype</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-3xl font-black tracking-tight">Project: NEON-MIND</h3>
+<span class="px-3 py-1 bg-surface-container-highest text-secondary text-[10px] font-black tracking-widest uppercase rounded-full border border-secondary/30">AI Visualizer</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">A real-time neural activity visualizer built for clinical psychologists, transforming complex EEG data into prismatic light sculptures.</p>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-2xl p-[1px] transition-all duration-500 hover:shadow-[0_0_50px_rgba(0,247,255,0.4)]">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary via-primary to-tertiary opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative bg-surface p-8 h-full rounded-2xl overflow-hidden">
+<div class="relative h-80 mb-8 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" data-alt="Digital interface with glowing coding blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPgJ32fzfP3T5gCiIV6HoVdjtKm4Xg-kewUtYxkXG9AdjMprnhWKJZlGg75mAkQ2P5tX1BCNUKi88MKmfDYi38_IlIe5ZjdV7TilPoGhBwkuu0U4mm8UMPQP17vyOCfyez1ljEimboMeqRGdKeAlOjHNFilDbLvOus1o_YAe3_UlRgMF68k0rn9H-3Suj8Spihu5vHsIDy3WdcScZkwe14dZ0GIQW0QajvNa1w0HioJ1Nv-DR58mc3X3ufoVuk0wQD19ZZ8ZORvOM"/>
+<div class="absolute inset-0 bg-[#00f7ff]/20 opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-500 flex items-center justify-center">
+<span class="bg-black text-on-surface px-6 py-2 rounded-full font-bold uppercase tracking-widest border border-secondary">Analyze Core</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-3xl font-black tracking-tight">SYNERGY-OS</h3>
+<span class="px-3 py-1 bg-surface-container-highest text-tertiary text-[10px] font-black tracking-widest uppercase rounded-full border border-tertiary/30">Interface Design</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">Redesigning the future of operating systems using glassmorphism principles and liquid-motion transitions for peak productivity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Experience Section (Asymmetric) -->
+<section class="py-32 px-8 lg:px-20 bg-surface-container-high relative">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-20">
+<div class="w-full md:w-1/3">
+<h2 class="text-5xl font-black mb-8 leading-none">THE<br/><span class="text-primary">TIMELINE</span></h2>
+<div class="p-8 glass-panel border border-outline-variant rounded-xl">
+<p class="text-xl font-medium text-on-surface mb-4">Currently: Senior Creative Technologist</p>
+<p class="text-on-surface-variant">Leading design-to-code initiatives for Fortune 500 tech companies looking to bridge the gap between human intuition and machine logic.</p>
+</div>
+</div>
+<div class="w-full md:w-2/3 flex flex-col gap-16">
+<!-- Exp Item 1 -->
+<div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-primary before:to-transparent">
+<span class="text-xs font-black tracking-widest text-secondary uppercase mb-2 block">2022 — PRESENT</span>
+<h4 class="text-2xl font-bold mb-4">Lead Developer @ Orbital Dynamics</h4>
+<p class="text-on-surface-variant max-w-xl">Pioneering the development of high-fidelity dashboard systems for aerospace telemetry. Achieved a 40% increase in operator data-retention through prismatic color-coding schemes.</p>
+</div>
+<!-- Exp Item 2 -->
+<div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-tertiary before:to-transparent">
+<span class="text-xs font-black tracking-widest text-tertiary uppercase mb-2 block">2020 — 2022</span>
+<h4 class="text-2xl font-bold mb-4">UI Architect @ CyberGlass Labs</h4>
+<p class="text-on-surface-variant max-w-xl">Spearheaded the 'Aero-Glass' design system, now used by over 50,000 developers globally to build performance-focused React applications.</p>
+</div>
+<!-- Exp Item 3 -->
+<div class="relative pl-12 before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-gradient-to-b before:from-secondary before:to-transparent">
+<span class="text-xs font-black tracking-widest text-secondary uppercase mb-2 block">2018 — 2020</span>
+<h4 class="text-2xl font-bold mb-4">Frontend Engineer @ Neon-Pulse</h4>
+<p class="text-on-surface-variant max-w-xl">Developed interactive landing pages for high-growth tech startups. Specialized in custom WebGL shaders and SVG animations.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full py-20 px-8 flex flex-col items-center gap-8 bg-[#0d0d17] mt-32 relative overflow-hidden">
+<!-- Neural Pulse Simulation (CSS-only) -->
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-20 animate-pulse"></div>
+</div>
+<div class="text-[#e7e3f3] font-bold text-4xl tracking-tighter mb-8">
+                Ready to <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">sync?</span>
+</div>
+<div class="flex flex-wrap justify-center gap-12 mb-12">
+<a class="text-[#aca9b8] hover:text-[#00f7ff] transition-colors font-['Space_Grotesk'] font-bold tracking-[0.2em] uppercase text-xs" href="#">Twitter</a>
+<a class="text-[#aca9b8] hover:text-[#00f7ff] transition-colors font-['Space_Grotesk'] font-bold tracking-[0.2em] uppercase text-xs" href="#">Github</a>
+<a class="text-[#aca9b8] hover:text-[#00f7ff] transition-colors font-['Space_Grotesk'] font-bold tracking-[0.2em] uppercase text-xs" href="#">LinkedIn</a>
+<a class="text-[#aca9b8] hover:text-[#00f7ff] transition-colors font-['Space_Grotesk'] font-bold tracking-[0.2em] uppercase text-xs" href="#">Dribbble</a>
+</div>
+<div class="text-[#aca9b8] font-['Space_Grotesk'] font-bold tracking-[0.2em] uppercase text-[10px] text-center max-w-lg leading-relaxed">
+                © 2024 PRISMATIC RESONANCE. ALL RIGHTS RESERVED. <br/>
+<span class="text-tertiary">ENCRYPTED CONNECTION SECURE // EST. 2024</span>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button (Shell) -->
+<button class="fixed bottom-10 right-10 w-16 h-16 rounded-full prismatic-gradient flex items-center justify-center text-black shadow-[0_20px_40px_rgba(138,0,255,0.4)] hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl font-bold">bolt</span>
+</button>
+</body></html>

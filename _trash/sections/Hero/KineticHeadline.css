@@ -1,0 +1,48 @@
+/* ============================================================
+   KineticHeadline.css — Stitch raw structure
+   Syne font, extrabold, gradient text on second word
+   ============================================================ */
+
+.kinetic-headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 3rem + 5vw, 9rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-shadow: 2px 2px 0px rgba(188, 135, 255, 0.1);  /* Stitch blueprint-text */
+  perspective: 600px;
+  overflow: hidden;
+}
+
+/* Gradient text effect for surname — applied via JS className */
+.kinetic-headline__gradient {
+  background: linear-gradient(
+    90deg,
+    #c69aff,    /* Stitch primary */
+    #d390f7,    /* Stitch secondary */
+    #c69aff     /* Stitch primary */
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.kinetic-char {
+  display: inline-block;
+  will-change: transform, opacity;
+  transform-origin: bottom center;
+  backface-visibility: hidden;
+}
+
+.kinetic-char--space {
+  width: 0.3em;
+}
