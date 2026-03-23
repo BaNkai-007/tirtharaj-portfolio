@@ -148,7 +148,10 @@ export default function Portfolio() {
               </p>
               
               <div className="flex gap-4 sm:gap-8 items-center flex-wrap reveal-up delay-400">
-                <button className="magnetic-btn bg-primary-container text-on-primary px-8 sm:px-10 py-5 font-bold uppercase tracking-widest text-xs sm:text-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all">
+                <button 
+                  onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="magnetic-btn bg-primary-container text-on-primary px-8 sm:px-10 py-5 font-bold uppercase tracking-widest text-xs sm:text-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all"
+                >
                   Explore Works
                 </button>
                 {person.resume && (
