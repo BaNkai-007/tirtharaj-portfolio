@@ -164,7 +164,7 @@ export default function Portfolio() {
             <div className="relative z-10 max-w-4xl">
               <h2 className="font-body text-primary-container uppercase tracking-[0.4em] text-sm mb-6 reveal-up delay-100">{person.role}</h2>
               <h1 className="font-headline text-7xl md:text-9xl italic leading-none mb-8 tracking-tighter text-on-surface reveal-up delay-200">
-                {person.name.split(' ')[0]} <span className="text-outline">&</span> <br/>
+                {person.name.split(' ')[0]} <br/>
                 <span className="text-primary-container">{person.name.split(' ').slice(1).join(' ')}.</span>
               </h1>
               <p className="font-body text-xl md:text-2xl text-outline max-w-xl leading-relaxed mb-12 reveal-up delay-300">
