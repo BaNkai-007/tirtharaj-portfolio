@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import data from './data/portfolio.json';
 import CustomCursor from './components/CustomCursor';
 import { useGlobalTilt, useGlobalMagnetic, useScrollReveal } from './hooks/usePhysics';
+import About from './sections/About/About';
 
 const { person, projects, skills, achievements, training, certifications, education } = data;
 
@@ -19,13 +20,33 @@ export default function Portfolio() {
       rootMargin: '-20% 0px -60% 0px'
     });
 
-    ['hero', 'stack', 'work', 'achievements', 'contact', 'protocols', 'training', 'certifications', 'education', ...projects.map(p => `project-${p.id}`)].forEach(id => {
+    ['hero', 'about', 'stack', 'work', 'achievements', 'contact', 'protocols', 'training', 'certifications', 'education', ...projects.map(p => `project-${p.id}`)].forEach(id => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
   }, []);
+
+  // Auto-scroll the top navigation bar horizontally when sections change
+  useEffect(() => {
+    let targetNavId = activeSection;
+    if (activeSection.startsWith('project-')) {
+      targetNavId = 'work';
+    }
+    
+    // Select the link in the top nav
+    const activeLink = document.querySelector(`header nav a[href="#${targetNavId}"]`);
+    const navContainer = activeLink?.parentElement;
+    
+    if (activeLink && navContainer) {
+      const scrollLeft = activeLink.offsetLeft - (navContainer.clientWidth / 2) + (activeLink.clientWidth / 2);
+      navContainer.scrollTo({
+        left: Math.max(0, scrollLeft),
+        behavior: 'smooth'
+      });
+    }
+  }, [activeSection]);
 
   useGlobalTilt('.tilt-card', { maxTilt: 5, scale: 1.02 });
   useGlobalMagnetic('.magnetic-btn', 20);
@@ -43,16 +64,19 @@ export default function Portfolio() {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-container/30 to-transparent rounded-full"></div>
 
               {/* Nav Links — scrolling row on mobile, centered on desktop */}
-              <nav className="flex items-center gap-2 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+              <nav className="relative flex items-center gap-2 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
                 {[
+                  { id: 'hero', label: 'Home' },
+                  { id: 'about', label: 'About' },
                   { id: 'work', label: 'Work' },
                   { id: 'stack', label: 'Engine' },
                   { id: 'protocols', label: 'Skills' },
+                  { id: 'achievements', label: 'Achievements' },
                   { id: 'training', label: 'Training' },
                   { id: 'education', label: 'Education' },
                   { id: 'contact', label: 'Contact' }
                 ].map(({ id, label }) => {
-                  const isActive = activeSection === id || (id === 'work' && (activeSection === 'hero' || activeSection.startsWith('project-')));
+                  const isActive = activeSection === id || (id === 'work' && activeSection.startsWith('project-'));
                   return (
                     <a
                       key={id}
@@ -169,6 +193,9 @@ export default function Portfolio() {
               <div className="font-body text-primary text-sm tracking-widest">22.5726° N, 88.3639° E</div>
             </div>
           </section>
+
+          {/* Section 1.5: About Component */}
+          <About />
 
           {/* Section 2: Case Studies / Projects */}
           <section className="py-32 px-8 md:px-24 bg-surface" id="work">

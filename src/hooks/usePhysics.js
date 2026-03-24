@@ -1,4 +1,8 @@
 import { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * useGlobalTilt — Native 3D spatial tilt effect (no external libs).
@@ -117,25 +121,65 @@ export function useGlobalMagnetic(selector = '.magnetic-btn', strength = 20) {
  */
 export function useScrollReveal() {
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-active');
-          // Animate once per page load to keep it clean
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      rootMargin: '0px 0px -100px 0px', // Trigger slightly before full view
-      threshold: 0.1
-    });
-
+    let ctx;
+    
     // We use a small timeout to allow React to render the DOM first
-    setTimeout(() => {
-      const elements = document.querySelectorAll('.reveal-up, .reveal-in');
-      elements.forEach(el => observer.observe(el));
+    const timer = setTimeout(() => {
+      ctx = gsap.context(() => {
+        
+        // 1. Reveal Up Animation (Fade In & Slide Up)
+        const revealUps = gsap.utils.toArray('.reveal-up');
+        revealUps.forEach(el => {
+          // Parse manual delay classes
+          const delayClass = Array.from(el.classList).find(c => c.startsWith('delay-'));
+          const delayStr = delayClass ? delayClass.split('-')[1] : '0';
+          const delay = parseInt(delayStr, 10) / 1000 || 0;
+
+          // Set initial hidden state so there's no layout flashing
+          gsap.set(el, { y: 40, opacity: 0 });
+
+          gsap.to(el, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: delay,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%', // Animate when top of element reaches 85% from top of viewport
+              toggleActions: 'play none none none',
+            }
+          });
+        });
+
+        // 2. Reveal In Animation (Fade In Only)
+        const revealIns = gsap.utils.toArray('.reveal-in');
+        revealIns.forEach(el => {
+          const delayClass = Array.from(el.classList).find(c => c.startsWith('delay-'));
+          const delayStr = delayClass ? delayClass.split('-')[1] : '0';
+          const delay = parseInt(delayStr, 10) / 1000 || 0;
+
+          gsap.set(el, { opacity: 0 });
+
+          gsap.to(el, {
+            opacity: 1,
+            duration: 1,
+            delay: delay,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            }
+          });
+        });
+
+      });
     }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      if (ctx) ctx.revert();
+    };
   }, []);
 }
